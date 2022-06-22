@@ -1,0 +1,538 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+#navbar {
+  background: #262262;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 87px;
+  padding-right: 20px;
+  transition: all 0.7s ease-in;
+}
+#userdetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+#userdetails .notification {
+  display: none;
+}
+
+#avatar {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#avatar img {
+  height: auto;
+  width: 40px;
+}
+#username {
+  padding: 0;
+  margin: 0;
+}
+#username p {
+  display: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+}
+#logo {
+  height: 80px;
+  width: 80px;
+}
+#logo:hover {
+  cursor: pointer;
+}
+#logo img {
+  height: 80px;
+  width: 80px;
+}
+#brandbox {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+#brandname {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 140%;
+  color: #f37821;
+  position: absolute;
+  left: 70px;
+}
+#brandname span {
+  color: white;
+}
+
+#hamburger {
+  color: #ffffff;
+}
+#desktop {
+  display: none;
+}
+.dropdown {
+  color: white;
+}
+
+.iconify {
+  cursor: pointer;
+}
+main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#container {
+  position: relative;
+  top: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  padding-bottom: 100px;
+  background: #fafafa;
+  border-radius: 20px;
+}
+#catOne {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+}
+#catTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 260px;
+}
+#container .avatarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 50%;
+  background: rgba(243, 120, 33, 0.6);
+  width: 375px;
+  height: 280px;
+  position: relative;
+  top: -120px;
+  left: -2px;
+  padding: 40px;
+}
+#container .avatarContainer img {
+  width: 100px;
+  height: 100px;
+}
+#name {
+  position: relative;
+  top: -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 120%;
+  color: #262262;
+}
+#occupation {
+  position: relative;
+  top: -90px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 140%;
+  text-align: center;
+  color: #262262;
+}
+#occupation span {
+  color: #adadad;
+}
+#hire {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 10px;
+  height: 42px;
+  width: fit-content;
+  background: #f37821;
+  border-radius: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 140%;
+  color: #ffffff;
+  position: relative;
+  top: -70px;
+  border: transparent;
+  cursor: pointer;
+}
+#hire:hover {
+  background: #ff6a00;
+}
+
+#personal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#email {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#email .title {
+  padding: 0px;
+  gap: 20px;
+  color: #f37821;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 140%;
+}
+#email .value {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #262262;
+}
+#certificates {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 140%;
+  color: #adadad;
+}
+#cert {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #262262;
+}
+#about {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 140%;
+  color: #262262;
+}
+#experience {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 140%;
+  color: #262262;
+}
+#skills {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 140%;
+  color: #262262;
+}
+@media all and (min-width: 375px) {
+}
+@media all and (min-width: 425px) {
+  body {
+    width: 100vw;
+  }
+  #brandbox {
+    gap: 0px;
+  }
+  #navcta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    right: 0;
+  }
+  #category {
+    top: 0px;
+  }
+  #container .avatarContainer {
+    width: 500px;
+  }
+}
+@media all and (min-width: 500px) {
+  #userdetails {
+    gap: 20px;
+  }
+  #username p {
+    display: flex;
+  }
+  #container {
+    padding: 0;
+  }
+  #container .avatarContainer {
+    width: 600px;
+  }
+}
+@media all and (min-width: 576px) {
+  #navcta .register {
+    display: flex;
+  }
+  #navcta .login {
+    display: flex;
+  }
+  #container {
+    padding-bottom: 100px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  #container .avatarContainer {
+    height: 700px;
+    width: 700px;
+    top: -430px;
+  }
+  #name {
+    top: -280px;
+  }
+  #occupation {
+    top: -300px;
+  }
+  #hire {
+    top: -300px;
+  }
+}
+@media all and (min-width: 700px) {
+  #container .avatarContainer {
+    height: 600px;
+    width: 800px;
+    top: -300px;
+  }
+  #name {
+    top: -280px;
+  }
+  #occupation {
+    top: -300px;
+  }
+  #hire {
+    top: -300px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    height: auto;
+  }
+
+  #username {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  #container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+  }
+  #name {
+    position: relative;
+    top: -80px;
+  }
+  #occupation {
+    position: relative;
+    top: -90px;
+  }
+  #hire {
+    position: relative;
+    top: -70px;
+  }
+  #container .avatarContainer {
+    width: 375px;
+    height: 280px;
+    position: relative;
+    top: -120px;
+    left: -2px;
+  }
+  #catOne {
+    overflow-x: hidden;
+    border-radius: 20px;
+    background: #fafafa;
+    padding-bottom: 100px;
+    width: 300px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+  }
+  #catTwo {
+    position: relative;
+    width: 60%;
+    align-items: flex-start;
+  }
+}
+@media all and (min-width: 992px) {
+  body {
+    height: auto;
+  }
+  #navbar {
+    position: fixed;
+  }
+  #navcta {
+    display: none;
+  }
+  #brandname {
+    left: 90px;
+  }
+
+  #desktop {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 24%;
+  }
+
+  #desktop menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  #desktop menu li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 20px;
+  }
+  #desktop menu a {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  #desktop a:hover {
+    color: #f37821;
+  }
+
+  #navbar {
+    height: 100px;
+    z-index: 10;
+    padding-left: 20px;
+  }
+
+  #userdetails {
+    position: absolute;
+    left: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #username {
+    height: auto;
+  }
+  #userdetails .notification {
+    display: flex;
+  }
+  #hamburger {
+    display: none;
+  }
+  .down {
+    color: white;
+  }
+  #container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 50px;
+    background: #ffffff;
+  }
+
+  #container .avatarContainer {
+    width: 375px;
+    height: 280px;
+    position: relative;
+    top: -120px;
+    left: -2px;
+  }
+  #catOne {
+    overflow-x: hidden;
+    border-radius: 20px;
+    background: #fafafa;
+    padding-bottom: 100px;
+    width: 300px;
+    padding: 20px;
+    padding-bottom: 50px;
+  }
+  #catTwo {
+    position: relative;
+    left: 10%;
+    width: 60%;
+    align-items: flex-start;
+  }
+}
+@media all and (min-width: 1200px) {
+  #navbar {
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+}
+@media all and (min-width: 1400px) {
+  #navbar {
+    position: fixed;
+  }
+}
+
+@media all and (min-width: 1600) {
+  #navbar {
+    position: fixed;
+  }
+}
