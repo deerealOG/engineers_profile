@@ -12,25 +12,31 @@ body {
   width: 100vw;
 }
 #navbar {
+  position: absolute;
   background: #262262;
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 87px;
-  padding-right: 20px;
+  padding-right: 2vw;
+  padding-left: 2vw;
   transition: all 0.7s ease-in;
+  z-index: 500;
 }
+
 #userdetails {
+  position: absolute;
+  right: 18%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
 }
-#userdetails .notification {
-  display: none;
+#avat {
+  display: flex;
+  align-items: center;
 }
 
 #avatar {
@@ -43,49 +49,27 @@ body {
 }
 #avatar img {
   height: auto;
-  width: 40px;
+  width: 50px;
 }
 #username {
   padding: 0;
   margin: 0;
 }
-#username p {
-  display: none;
+#username {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 1rem;
   line-height: 150%;
   color: #ffffff;
 }
 #logo {
-  height: 80px;
-  width: 80px;
 }
 #logo:hover {
   cursor: pointer;
 }
 #logo img {
-  height: 80px;
-  width: 80px;
-}
-#brandbox {
-  display: flex;
-  align-items: center;
-  gap: 0px;
-}
-#brandname {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 0.8rem;
-  line-height: 140%;
-  color: #f37821;
-  position: absolute;
-  left: 70px;
-}
-#brandname span {
-  color: white;
+  height: 3.375rem;
 }
 
 #hamburger {
@@ -94,16 +78,163 @@ body {
 #desktop {
   display: none;
 }
-.dropdown {
-  color: white;
+#toggle {
+  display: none;
 }
 
-.iconify {
+/**
+  Hamburger
+**/
+.hamburger {
+  position: absolute;
+  top: 4em;
+  right: 5%;
+  margin-top: -45px;
+  width: 2.2em;
+  height: 40px;
+  z-index: 500;
+}
+
+.hamburger div {
+  position: relative;
+  top: -6px;
+  right: 5%;
+  width: 2.6em;
+  height: 6px;
+  border-radius: 3px;
+  background: #f37821;
+  margin-top: 8px;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #262262;
+  top: -100%;
+  left: 0%;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  z-index: 400;
+}
+.nav-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.nav-wrapper nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin-top: 50px;
+}
+.nav a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+}
+/**
+Animations
+**/
+#toggle:checked + .hamburger {
+  position: fixed;
+}
+
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -6px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
+
+/**
+Animations
+**/
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -6px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
+.down {
+  color: white;
+  display: none;
+}
+.caret {
+  display: none;
+}
+
+#dropDownCont {
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  z-index: 100;
+  background: #262262;
+  width: auto;
+  padding: 0px;
+}
+.profileDropdown {
+  display: none;
+  padding: 10px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.profileDropdown li {
+  list-style: none;
+  padding: 10px 24px;
+}
+.profileDropdown a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: 600;
+  text-decoration: none;
+}
+.profileDropdown a:hover {
+  color: #f37821;
+}
+.show {
+  display: flex;
+}
+
 main {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 #container {
   position: relative;
@@ -169,8 +300,8 @@ main {
   top: -90px;
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
   line-height: 140%;
   text-align: center;
   color: #262262;
@@ -209,6 +340,7 @@ main {
   flex-direction: column;
   gap: 30px;
 }
+
 #email {
   display: flex;
   flex-direction: column;
@@ -220,14 +352,14 @@ main {
   color: #f37821;
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.25rem;
   line-height: 140%;
 }
 #email .value {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   line-height: 150%;
   color: #262262;
@@ -236,14 +368,14 @@ main {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 140%;
   color: #adadad;
 }
 #cert {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   line-height: 150%;
   color: #262262;
@@ -329,7 +461,32 @@ main {
     top: -430px;
   }
   #name {
-    top: -280px;
+    top: -300px;
+  }
+  #personal {
+    position: relative;
+    top: -160px;
+  }
+  #personal .title {
+    width: max-content;
+  }
+  #certificates {
+    position: relative;
+    top: -120px;
+  }
+
+  #cert {
+    position: relative;
+    top: -120px;
+    width: max-content;
+  }
+  #about {
+    position: relative;
+    top: -120px;
+  }
+  #experience {
+    position: relative;
+    top: -120px;
   }
   #occupation {
     top: -300px;
@@ -363,7 +520,7 @@ main {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 140%;
   }
   #container {
@@ -378,9 +535,28 @@ main {
     position: relative;
     top: -80px;
   }
+  #personal {
+    top: -10px;
+  }
+  #personal .title {
+    width: auto;
+  }
+  #certificates {
+    top: 10px;
+  }
+  #cert {
+    top: 10px;
+    width: auto;
+  }
   #occupation {
     position: relative;
     top: -90px;
+  }
+  #about {
+    top: 10px;
+  }
+  #experience {
+    top: 10px;
   }
   #hire {
     position: relative;
@@ -460,14 +636,13 @@ main {
   }
 
   #navbar {
-    height: 100px;
     z-index: 10;
     padding-left: 20px;
   }
 
   #userdetails {
     position: absolute;
-    left: 80%;
+    right: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -478,11 +653,13 @@ main {
   #userdetails .notification {
     display: flex;
   }
-  #hamburger {
+  .hamburger {
     display: none;
   }
   .down {
     color: white;
+    display: block;
+    cursor: pointer;
   }
   #container {
     flex-direction: row;
@@ -518,7 +695,6 @@ main {
 }
 @media all and (min-width: 1200px) {
   #navbar {
-    height: 100px;
     position: fixed;
     left: 0;
     top: 0;
